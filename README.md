@@ -4,14 +4,14 @@ My personal site: projects, writing, and a small pixel-art version of me in the 
 
 Live at **https://madhavgupta340.github.io**
 
-It's a plain [Jekyll](https://jekyllrb.com) site with a light, retro-computing look: JetBrains Mono for headings and labels, Inter for longer text. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
+It's a plain [Jekyll](https://jekyllrb.com) site with a calm, black-and-white layout and indie pixel-game touches: Pixelify Sans headings, JetBrains Mono text, Silkscreen for tiny labels, dithered dividers, a ▶ menu cursor and a pixel mouse pointer. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
 
 ## Updating content
 
 | What | Where |
 |---|---|
 | Name, intro details, email, GitHub | `_config.yml` (the `author:` block) |
-| Home page intro text | `index.html` |
+| Home page intro text and the "Player 1" card | `index.html` |
 | About page | `about.md` |
 | Contact page | `contact.md` |
 | Header links | `_data/navigation.yml` |
@@ -27,43 +27,25 @@ It's a plain [Jekyll](https://jekyllrb.com) site with a light, retro-computing l
    title: My Project
    order: 3                # position in lists (lower = earlier)
    featured: true          # also show it on the home page
-   accent: blue            # window colour of its previews: orange, yellow, blue, green or pink
    tagline: One sentence shown under the title on its own page.
    summary: Two sentences for the project list.
    context: Personal project, 2026
    tech: [Python, JavaScript]
    repo: https://github.com/madhavgupta340/my-project
-   live: https://example.com          # optional, adds a "Live demo" button
-   live_short_note: sign-in only      # optional, small note on that button
-   demo_video: true                   # optional, adds a "Watch demo" button (needs a video in media)
-
-   # The big preview shown on cards and at the top of the project page.
-   # Leave these out and a neutral "Preview coming soon" card is shown instead.
-   cover: /assets/projects/my-project/screenshot.jpg
-   cover_width: 1600
-   cover_height: 1000
-   cover_label: Dashboard              # shown in the little window bar
-   cover_alt: What the screenshot shows, for people using screen readers
-   cover_caption: Optional caption under the preview on the project page.
-
-   media:                      # optional extra screenshots / videos for the gallery
-     - label: Settings         # shown in the window bar
-       src: /assets/projects/my-project/settings.jpg
+   live: https://example.com   # optional
+   media:                      # optional screenshots / videos
+     - src: /assets/projects/my-project/screenshot.jpg
        width: 1600
        height: 1000
-       alt: What the screenshot shows
+       alt: What the screenshot shows, for people using screen readers
        caption: Optional caption.
-       wide: true              # optional: span the full gallery width
      - type: video
-       label: Demo
        src: /assets/projects/my-project/demo.mp4
        poster: /assets/projects/my-project/screenshot.jpg
        alt: Short description of the video
    ```
 3. Write the plain-language explanation below the `---` in normal Markdown.
-4. Put images in `assets/projects/my-project/`. Around 1600px-wide JPGs at a 16:10-ish ratio look best; cards show the top of the image in a 16:10 frame, and the gallery shows images uncropped.
-
-Clicking any screenshot on a project page opens it larger. Use ← / → to move between them and Esc to close.
+4. Put images in `assets/projects/my-project/`. Around 1600px wide JPGs keep pages fast.
 
 The project gets its own page at `/projects/my-project/` automatically.
 
@@ -112,26 +94,14 @@ Open http://localhost:4000. Pages rebuild when you save (restart the server afte
 
 ## The pixel companion
 
-Pixel me lives in `assets/js/buddy.js`. It's drawn in code on a 36×38 canvas and only ever scaled by whole numbers (2×, 3× or 4×), so the pixels stay crisp. It has no mouth; the eyes, eyebrows and blush do the talking.
+It lives in `assets/js/buddy.js` and is drawn in code on a 32×28 canvas, so there are no image files.
 
-**Where it lives** (worked out again every time the window is resized)
-- **Wide windows:** it roams the empty right margin. It walks along the bottom edge, bounces off the side ("BOING!"), climbs the wall and slides down ("WHEEE!"), and takes off holding a tiny rocket ("WHOOSH!"). The layer lets clicks pass through and never overlaps the text column.
-- **Narrower windows and phones:** it sits in a slim dock fixed to the bottom of the window. The page gets the same amount of bottom padding, so nothing is ever hidden behind it. Speech bubbles are switched off in the dock, so it never draws over the page.
+- Click it to see a new activity: tennis, piano, lifting, yawning and napping, GIF texting, Newton's apple, juggling, and waving.
+- **Pause/Play** sits under it. The choice is remembered, and it starts paused for anyone whose system asks for reduced motion.
+- It stops animating when the tab is hidden or it's scrolled out of view.
+- On wide screens it sits in the empty right margin, drawn at 4× size. On smaller screens it moves into the footer so it never covers anything.
 
-**What it does**
-- Tennis ("POW!"), keepy-uppy with the racket, piano, lifting with dumbbells, yawning into a quick nap, and listening to music on headphones.
-- It reacts to the page. Its eyes follow your cursor, it waves when the cursor comes close, it notices fast scrolling and the end of the page, and it says hi when you come back to the tab.
-- Click it to say hi. Click a few more times and see what happens.
-- Comic bubbles appear now and then for about 1.5 seconds. Nothing flashes.
-
-**Controls**
-- **Pause / Play** freezes it in place. **Hide** removes it, along with the dock, and "Bring back pixel me" in the footer brings it back. Both choices are remembered.
-- It starts paused for anyone whose system asks for reduced motion, and stops completely when the tab isn't visible.
-
-**Changing it**
-- Colours (skin, shirt, trousers, shoes…) are in the `P` object at the top of the file.
-- Poses and props are in `ANIMS`. Things it does and where it goes are in `BEHAVIOURS`, each with a `weight` for how often it happens.
-- Preview from the browser console: `buddy.do("rocket")` runs a behaviour; `buddy.pose("music", 3)` freezes on a single frame. `buddy.behaviours` and `buddy.poses` list the names.
+Preview a single activity from the browser console with `buddy.play("gif")` or `buddy.show("tennis", 4)`. To add one, write a new entry in `ACTS` and add its name to `PLAYLIST`.
 
 ## Credits
 

@@ -2,57 +2,47 @@
 title: ChainBridge
 order: 1
 featured: true
-accent: yellow           # window colour: orange, yellow, blue, green or pink
 tagline: A digital notary for files. It stamps a fingerprint of your document on the Cardano blockchain so anyone can check a copy later.
 summary: Upload a document and ChainBridge records a unique fingerprint of it on the Cardano blockchain. Later, anyone can check for free whether their copy is exactly the original. Built at the TUM Blockchain & AI Hackathon.
 context: TUM Blockchain & AI Hackathon, Oct 2026
 tech: [JavaScript, Cardano, x402 payments, Masumi, Merkle trees, Meta AI]
 repo: https://github.com/madhavgupta340/ChainBridge
-demo_video: true
-cover: /assets/projects/chainbridge/01-home.jpg
-cover_width: 1600
-cover_height: 1025
-cover_label: Home
-cover_alt: ChainBridge home screen with two choices, Seal a document and Check a document
-cover_caption: "The two things ChainBridge does: seal a document (paid) or check one you received (free)."
-media_title: Demo and screenshots
+media_title: Screenshots and demo
 media_note: Recorded on Cardano’s test network. The sample documents are fictional.
 media:
   - type: video
-    label: Demo video
     src: /assets/projects/chainbridge/demo.mp4
     poster: /assets/projects/chainbridge/01-home.jpg
     width: 1600
     height: 1025
     alt: ChainBridge demo video
     caption: The project demo video.
-  - label: AI facts
-    src: /assets/projects/chainbridge/08-ai-facts.jpg
+  - src: /assets/projects/chainbridge/01-home.jpg
+    width: 1600
+    height: 1025
+    alt: ChainBridge home screen with two choices, Seal a document and Check a document
+    caption: "The two things ChainBridge does: seal a document (paid) or check one you received (free)."
+  - src: /assets/projects/chainbridge/08-ai-facts.jpg
     width: 1600
     height: 1025
     alt: A list of facts the AI extracted from an inspection report, each with the source words it came from
     caption: The AI returns the important facts along with the exact words it took them from. You confirm or edit them.
-  - label: Fingerprint
-    src: /assets/projects/chainbridge/10-fingerprint-and-publish.jpg
+  - src: /assets/projects/chainbridge/10-fingerprint-and-publish.jpg
     width: 1600
     height: 1025
     alt: Fingerprint screen showing what stays on your device and what gets published to Cardano
     caption: The fingerprint is made in the browser. Only the fingerprint goes on Cardano, never the file.
-  - label: Published
-    src: /assets/projects/chainbridge/11-published-and-paid.jpg
+  - src: /assets/projects/chainbridge/11-published-and-paid.jpg
     width: 1600
     height: 1025
     alt: Confirmation screen with links to the publication and payment transactions on Cardano
     caption: Published first, paid second. Both blockchain transactions are linked.
-  - label: Check
-    src: /assets/projects/chainbridge/16-check-results.jpg
+  - src: /assets/projects/chainbridge/16-check-results.jpg
     width: 1600
     height: 1025
     alt: Check results showing four valid checks for file match, Cardano record, version link and issuer signature
     caption: "Checking a copy: four separate checks, all done in the browser."
-  - label: Different file
-    wide: true
-    src: /assets/projects/chainbridge/18-check-different-file.jpg
+  - src: /assets/projects/chainbridge/18-check-different-file.jpg
     width: 1600
     height: 1025
     alt: Check result warning that the file is different from the sealed version

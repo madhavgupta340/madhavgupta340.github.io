@@ -1,17 +1,17 @@
-{% comment %} Renders project preview cards. Pass `projects=` a list of project documents. {% endcomment %}
+{% comment %} Renders a list of projects. Pass `projects=` a list of project documents. {% endcomment %}
 <ul class="project-list" role="list">
   {% for project in include.projects %}
-  <li class="project-card">
-    {% include project-frame.html project=project link=project.url %}
-    <div class="project-card__body">
-      <div class="project-card__head">
-        <h3 class="project-card__title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-        {% if project.context %}<span class="label">{{ project.context }}</span>{% endif %}
-      </div>
-      <p class="project-card__summary">{{ project.summary }}</p>
-      <ul class="tags" aria-label="Built with">{% for t in project.tech %}<li>{{ t }}</li>{% endfor %}</ul>
-      {% include project-links.html project=project details=true %}
+  <li class="project-row">
+    <div class="project-row__head">
+      <h3 class="project-row__title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+      {% if project.context %}<span class="label">{{ project.context }}</span>{% endif %}
     </div>
+    <p class="project-row__summary">{{ project.summary }}</p>
+    <p class="tags"><span class="visually-hidden">Built with: </span>{{ project.tech | join: " · " }}</p>
+    <p class="project-row__links">
+      <a href="{{ project.url | relative_url }}">Read more<span class="visually-hidden"> about {{ project.title }}</span> →</a>
+      <a href="{{ project.repo }}">GitHub<span class="visually-hidden"> repository for {{ project.title }}</span> ↗</a>
+    </p>
   </li>
   {% endfor %}
 </ul>

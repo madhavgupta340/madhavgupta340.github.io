@@ -8,18 +8,13 @@ layout: default
     <p class="lead">{{ page.tagline }}</p>
   </header>
 
-  <div class="project-hero-wrap">
-    <figure class="project-hero">
-      {% include project-frame.html project=page zoom=true %}
-      {% if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}
-    </figure>
-    {% include project-links.html project=page %}
-  </div>
-
   <dl class="facts">
     {% if page.context %}<div><dt>Context</dt><dd>{{ page.context }}</dd></div>{% endif %}
     <div><dt>Built with</dt><dd>{{ page.tech | join: ", " }}</dd></div>
-    {% if page.live %}<div><dt>Live demo</dt><dd><a href="{{ page.live }}">{{ page.live | remove: "https://" }}</a>{% if page.live_note %} <span class="muted">({{ page.live_note }})</span>{% endif %}</dd></div>{% endif %}
+    <div><dt>Links</dt><dd>
+      <a href="{{ page.repo }}">GitHub repository ↗</a>
+      {% if page.live %}<br><a href="{{ page.live }}">Live site ↗</a>{% if page.live_note %} <span class="muted">({{ page.live_note }})</span>{% endif %}{% endif %}
+    </dd></div>
   </dl>
 
   <div class="prose">
@@ -30,37 +25,25 @@ layout: default
   <section class="media" aria-labelledby="media-heading">
     <h2 id="media-heading">{% if page.media_title %}{{ page.media_title }}{% else %}Screenshots{% endif %}</h2>
     {% if page.media_note %}<p class="muted small">{{ page.media_note }}</p>{% endif %}
-    <div class="gallery-grid">
-      {% for item in page.media %}
-      <figure class="gallery-item{% if item.type == 'video' or item.wide %} gallery-item--wide{% endif %}"{% if item.type == "video" %} id="demo"{% endif %}>
-        <div class="frame{% if page.accent %} frame--{{ page.accent }}{% endif %}">
-          <div class="frame__bar" aria-hidden="true">
-            <span class="frame__title">{{ page.title | downcase }}{% if item.label %} — {{ item.label | downcase }}{% endif %}</span>
-            <span class="frame__dots"><i></i><i></i></span>
-          </div>
-          {% if item.type == "video" %}
-            <div class="frame__view frame__view--natural">
-              <video controls preload="none" playsinline
-                     {% if item.poster %}poster="{{ item.poster | relative_url }}"{% endif %}
-                     {% if item.width %}width="{{ item.width }}" height="{{ item.height }}"{% endif %}
-                     aria-label="{{ item.alt }}">
-                <source src="{{ item.src | relative_url }}" type="video/mp4">
-                <a href="{{ item.src | relative_url }}">Download the video</a>.
-              </video>
-            </div>
-          {% else %}
-            <button type="button" class="frame__zoom" data-zoom="{{ item.src | relative_url }}" data-caption="{{ item.caption | escape }}" aria-label="Enlarge screenshot: {{ item.alt | escape }}">
-              <span class="frame__view frame__view--natural">
-                <img src="{{ item.src | relative_url }}" alt="{{ item.alt }}" loading="lazy" decoding="async"
-                     {% if item.width %}width="{{ item.width }}" height="{{ item.height }}"{% endif %}>
-              </span>
-            </button>
-          {% endif %}
-        </div>
-        {% if item.caption %}<figcaption>{{ item.caption | markdownify | remove: "<p>" | remove: "</p>" | strip }}</figcaption>{% endif %}
-      </figure>
-      {% endfor %}
-    </div>
+    {% for item in page.media %}
+    <figure class="media__item">
+      {% if item.type == "video" %}
+        <video controls preload="none" playsinline
+               {% if item.poster %}poster="{{ item.poster | relative_url }}"{% endif %}
+               {% if item.width %}width="{{ item.width }}" height="{{ item.height }}"{% endif %}
+               aria-label="{{ item.alt }}">
+          <source src="{{ item.src | relative_url }}" type="video/mp4">
+          <a href="{{ item.src | relative_url }}">Download the video</a>.
+        </video>
+      {% else %}
+        <a href="{{ item.src | relative_url }}" class="media__link">
+          <img src="{{ item.src | relative_url }}" alt="{{ item.alt }}" loading="lazy" decoding="async"
+               {% if item.width %}width="{{ item.width }}" height="{{ item.height }}"{% endif %}>
+        </a>
+      {% endif %}
+      {% if item.caption %}<figcaption>{{ item.caption | markdownify | remove: "<p>" | remove: "</p>" | strip }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
   </section>
   {% endif %}
 </article>

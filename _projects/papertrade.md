@@ -2,7 +2,6 @@
 title: PaperTrade
 order: 2
 featured: true
-accent: blue           # window colour: orange, yellow, blue, green or pink
 tagline: Practise trading stocks with pretend money, so mistakes cost nothing.
 summary: A stock-trading simulator. You get a pretend balance, buy and sell stocks at live or demo prices, and see how your picks would have done without risking a cent.
 context: Personal project, 2026
@@ -10,23 +9,19 @@ tech: [Python, JavaScript, HTML & CSS, SQLite, Postgres, Twelve Data API, Vercel
 repo: https://github.com/madhavgupta340/PaperTrade
 live: https://papertrade-viue.vercel.app
 live_note: my personal copy, so it’s password-protected
-live_short_note: sign-in only
-cover: /assets/projects/papertrade/dashboard.jpg
-cover_width: 1600
-cover_height: 1000
-cover_label: Dashboard (demo mode)
-cover_alt: PaperTrade dashboard showing a simulated portfolio value, an allocation breakdown by stock, and cash, invested and profit totals
-cover_caption: "The dashboard in demo mode: portfolio value, where your money is, and how it’s doing today. Prices are made up."
 media_note: Taken from a copy running on my laptop in demo mode, so the prices are made up.
 media:
-  - label: Stock page
-    src: /assets/projects/papertrade/stock.jpg
+  - src: /assets/projects/papertrade/dashboard.jpg
+    width: 1600
+    height: 1000
+    alt: PaperTrade dashboard showing a simulated portfolio value, an allocation breakdown by stock, and cash, invested and profit totals
+    caption: "The dashboard: portfolio value, where your money is, and how it’s doing today."
+  - src: /assets/projects/papertrade/stock.jpg
     width: 1600
     height: 1000
     alt: Stock page for NVIDIA with a one-day price chart and a buy and sell panel
     caption: A stock page with an interactive price chart and the order panel.
-  - label: History
-    src: /assets/projects/papertrade/history.jpg
+  - src: /assets/projects/papertrade/history.jpg
     width: 1600
     height: 1000
     alt: History page listing five simulated buy transactions with dates, prices and cash remaining

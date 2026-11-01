@@ -9,11 +9,17 @@ title: Home
     {{ site.author.university_short }} in {{ site.author.location }}. When I’m not wrestling with
     problem sheets, I build small software projects, play tennis, and answer most texts with a GIF.
   </p>
-  <dl class="facts facts--inline">
-    <div><dt>Studying</dt><dd>{{ site.author.study }}, {{ site.author.semester }}</dd></div>
-    <div><dt>At</dt><dd>{{ site.author.university }}</dd></div>
-    <div><dt>Based in</dt><dd>{{ site.author.location }}</dd></div>
-  </dl>
+  <div class="player-card" role="group" aria-label="Quick facts">
+    <p class="player-card__title" aria-hidden="true"><span>PLAYER 1</span><span>&#9829;&#9829;&#9829;</span></p>
+    <dl class="player-card__stats">
+      <div><dt>NAME</dt><dd>{{ site.author.first_name }}</dd></div>
+      <div><dt>LVL<span class="visually-hidden"> (age)</span></dt><dd>{{ site.author.age }}</dd></div>
+      <div><dt>CLASS</dt><dd>{{ site.author.study }} student, {{ site.author.semester }}</dd></div>
+      <div><dt>GUILD</dt><dd>{{ site.author.university }}</dd></div>
+      <div><dt>BASE</dt><dd>{{ site.author.location }}</dd></div>
+      <div><dt>SKILLS</dt><dd>Tennis · building software · texting in GIFs</dd></div>
+    </dl>
+  </div>
 </section>
 
 <section class="section" aria-labelledby="featured-heading">
