@@ -3,15 +3,17 @@ layout: default
 title: Home
 ---
 <section class="hero" aria-labelledby="intro-heading">
-  <p class="hero__role">Physics @ {{ site.author.university_short }} <span aria-hidden="true">·</span> AI &amp; new tech <span aria-hidden="true">·</span> {{ site.author.location }}</p>
+  <p class="hero__role">{{ site.author.age }} <span aria-hidden="true">·</span> Physics @ {{ site.author.university_short }} <span aria-hidden="true">·</span> {{ site.author.location }}</p>
   <h1 id="intro-heading">Hey, I’m {{ site.author.first_name }}.</h1>
   <p class="lead">
-    I’m {{ site.author.age }} and studying {{ site.author.study | downcase }} at the {{ site.author.university }},
-    currently in my first semester. On the side I make cool stuff with AI and new tech, like an AI agent on
-    Cardano that seals documents on the blockchain, and a trading simulator running on live market data.
+    First-semester physics student, living in {{ site.author.location }}. Pretty chill, a bit of a nerd, and
+    happiest on a tennis court or halfway through a problem sheet that finally makes sense.
+  </p>
+  <p class="lead">
+    Also genuinely elite at texting in GIFs. If a chat app only let me reply with GIFs, I’d be completely fine.
+    Possibly better.
   </p>
   <p class="hero__links">
-    <a href="{{ '/projects/' | relative_url }}">See my projects →</a>
     <a href="https://github.com/{{ site.author.github }}">GitHub ↗</a>
     <a href="mailto:{{ site.author.email }}">Email</a>
   </p>
@@ -45,17 +47,6 @@ title: Home
 </section>
 {% endif %}
 
-<section class="section" aria-labelledby="offclock-heading">
-  <div class="section__head">
-    <p class="section__num" aria-hidden="true">{% if site.posts.size > 0 %}03{% else %}02{% endif %}</p>
-    <h2 id="offclock-heading">Off the clock</h2>
-  </div>
-  <ul class="offclock" role="list">
-    <li><strong>Tennis.</strong> The best excuse to close the laptop for a few hours.</li>
-    <li><strong>GIFs.</strong> I reply to most texts with one. It’s a skill, honestly.</li>
-    <li><strong>Pixel me.</strong> The little one hanging around this page. Click it and see.</li>
-  </ul>
-</section>
 
 <section class="cta" aria-labelledby="cta-heading">
   <h2 id="cta-heading">Say hi.</h2>

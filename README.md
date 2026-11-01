@@ -4,7 +4,7 @@ My personal site: projects, writing, and a small pixel-art version of me in the 
 
 Live at **https://madhavgupta340.github.io**
 
-It's a plain [Jekyll](https://jekyllrb.com) site with a calm, black-and-white layout and retro pixel touches: JetBrains Mono for headings and text, Silkscreen for tiny labels, a ▶ menu cursor and a pixel mouse pointer. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
+It's a plain [Jekyll](https://jekyllrb.com) site with a calm, black-and-white layout and retro pixel touches: Space Grotesk for headings, Inter for text, Silkscreen for tiny labels, a ▶ menu cursor and a pixel mouse pointer. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
 
 ## Updating content
 
