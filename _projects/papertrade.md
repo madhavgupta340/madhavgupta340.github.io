@@ -2,6 +2,8 @@
 title: PaperTrade
 order: 2
 featured: true
+cover: /assets/projects/papertrade/dashboard.jpg       # thumbnail on project cards
+cover_alt: PaperTrade dashboard in demo mode with a simulated portfolio value and allocation breakdown
 tagline: Practise trading stocks with pretend money, so mistakes cost nothing.
 summary: A stock-trading simulator. You get a pretend balance, buy and sell stocks at live or demo prices, and see how your picks would have done without risking a cent.
 context: Personal project, 2026

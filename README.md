@@ -4,14 +4,14 @@ My personal site: projects, writing, and a small pixel-art version of me in the 
 
 Live at **https://madhavgupta340.github.io**
 
-It's a plain [Jekyll](https://jekyllrb.com) site with a calm, black-and-white layout and indie pixel-game touches: Pixelify Sans headings, JetBrains Mono text, Silkscreen for tiny labels, dithered dividers, a ▶ menu cursor and a pixel mouse pointer. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
+It's a plain [Jekyll](https://jekyllrb.com) site with a calm, black-and-white layout and retro pixel touches: VT323 (a CRT-terminal font) for headings, JetBrains Mono for text, Silkscreen for tiny labels, a ▶ menu cursor and a pixel mouse pointer. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
 
 ## Updating content
 
 | What | Where |
 |---|---|
 | Name, intro details, email, GitHub | `_config.yml` (the `author:` block) |
-| Home page intro text and the "Player 1" card | `index.html` |
+| Home page: intro, "Off the clock" and "Say hi" sections | `index.html` |
 | About page | `about.md` |
 | Contact page | `contact.md` |
 | Header links | `_data/navigation.yml` |
@@ -27,6 +27,7 @@ It's a plain [Jekyll](https://jekyllrb.com) site with a calm, black-and-white la
    title: My Project
    order: 3                # position in lists (lower = earlier)
    featured: true          # also show it on the home page
+   cover: /assets/projects/my-project/screenshot.jpg   # thumbnail on the project cards
    tagline: One sentence shown under the title on its own page.
    summary: Two sentences for the project list.
    context: Personal project, 2026

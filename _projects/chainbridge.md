@@ -2,6 +2,8 @@
 title: ChainBridge
 order: 1
 featured: true
+cover: /assets/projects/chainbridge/01-home.jpg       # thumbnail on project cards
+cover_alt: ChainBridge home screen with two choices, Seal a document and Check a document
 tagline: A digital notary for files. It stamps a fingerprint of your document on the Cardano blockchain so anyone can check a copy later.
 summary: Upload a document and ChainBridge records a unique fingerprint of it on the Cardano blockchain. Later, anyone can check for free whether their copy is exactly the original. Built at the TUM Blockchain & AI Hackathon.
 context: TUM Blockchain & AI Hackathon, Oct 2026

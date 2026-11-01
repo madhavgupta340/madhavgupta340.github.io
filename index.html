@@ -2,29 +2,25 @@
 layout: default
 title: Home
 ---
-<section class="intro" aria-labelledby="intro-heading">
+<section class="hero" aria-labelledby="intro-heading">
+  <p class="hero__role">Physics @ {{ site.author.university_short }} <span aria-hidden="true">·</span> Builds software <span aria-hidden="true">·</span> {{ site.author.location }}</p>
   <h1 id="intro-heading">Hey, I’m {{ site.author.first_name }}.</h1>
   <p class="lead">
-    I’m {{ site.author.age }} and in my first semester of {{ site.author.study | downcase }} at
-    {{ site.author.university_short }} in {{ site.author.location }}. When I’m not wrestling with
-    problem sheets, I build small software projects, play tennis, and answer most texts with a GIF.
+    I’m {{ site.author.age }} and studying {{ site.author.study | downcase }} at the {{ site.author.university }},
+    currently in my first semester. Alongside that I build software: so far a paper-trading platform with live
+    market data, and an AI agent on Cardano that seals documents on the blockchain.
   </p>
-  <div class="player-card" role="group" aria-label="Quick facts">
-    <p class="player-card__title" aria-hidden="true"><span>PLAYER 1</span><span>&#9829;&#9829;&#9829;</span></p>
-    <dl class="player-card__stats">
-      <div><dt>NAME</dt><dd>{{ site.author.first_name }}</dd></div>
-      <div><dt>LVL<span class="visually-hidden"> (age)</span></dt><dd>{{ site.author.age }}</dd></div>
-      <div><dt>CLASS</dt><dd>{{ site.author.study }} student, {{ site.author.semester }}</dd></div>
-      <div><dt>GUILD</dt><dd>{{ site.author.university }}</dd></div>
-      <div><dt>BASE</dt><dd>{{ site.author.location }}</dd></div>
-      <div><dt>SKILLS</dt><dd>Tennis · building software · texting in GIFs</dd></div>
-    </dl>
-  </div>
+  <p class="hero__links">
+    <a href="{{ '/projects/' | relative_url }}">See my projects →</a>
+    <a href="https://github.com/{{ site.author.github }}">GitHub ↗</a>
+    <a href="mailto:{{ site.author.email }}">Email</a>
+  </p>
 </section>
 
-<section class="section" aria-labelledby="featured-heading">
+<section class="section" aria-labelledby="work-heading">
   <div class="section__head">
-    <h2 id="featured-heading">Things I’ve built</h2>
+    <p class="section__num" aria-hidden="true">01</p>
+    <h2 id="work-heading">Selected work</h2>
     <a href="{{ '/projects/' | relative_url }}">All projects →</a>
   </div>
   {% assign featured = site.projects | where: "featured", true | sort: "order" %}
@@ -34,6 +30,7 @@ title: Home
 {% if site.posts.size > 0 %}
 <section class="section" aria-labelledby="writing-heading">
   <div class="section__head">
+    <p class="section__num" aria-hidden="true">02</p>
     <h2 id="writing-heading">Recent writing</h2>
     <a href="{{ '/writing/' | relative_url }}">All writing →</a>
   </div>
@@ -47,3 +44,20 @@ title: Home
   </ul>
 </section>
 {% endif %}
+
+<section class="section" aria-labelledby="offclock-heading">
+  <div class="section__head">
+    <p class="section__num" aria-hidden="true">{% if site.posts.size > 0 %}03{% else %}02{% endif %}</p>
+    <h2 id="offclock-heading">Off the clock</h2>
+  </div>
+  <ul class="offclock" role="list">
+    <li><strong>Tennis.</strong> The best excuse to close the laptop for a few hours.</li>
+    <li><strong>GIFs.</strong> I reply to most texts with one. It’s a skill, honestly.</li>
+    <li><strong>Pixel me.</strong> The little one hanging around this page. Click it and see.</li>
+  </ul>
+</section>
+
+<section class="cta" aria-labelledby="cta-heading">
+  <h2 id="cta-heading">Say hi.</h2>
+  <p>The easiest way to reach me is <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>.</p>
+</section>

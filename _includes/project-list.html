@@ -1,17 +1,24 @@
-{% comment %} Renders a list of projects. Pass `projects=` a list of project documents. {% endcomment %}
+{% comment %} Renders project cards. Pass `projects=` a list of project documents. {% endcomment %}
 <ul class="project-list" role="list">
   {% for project in include.projects %}
-  <li class="project-row">
-    <div class="project-row__head">
-      <h3 class="project-row__title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
-      {% if project.context %}<span class="label">{{ project.context }}</span>{% endif %}
+  <li class="project-card">
+    <a class="project-card__thumb" href="{{ project.url | relative_url }}" tabindex="-1" aria-hidden="true">
+      {% if project.cover %}
+        <img src="{{ project.cover | relative_url }}" alt="" loading="lazy" decoding="async" width="1600" height="1000">
+      {% else %}
+        <span class="project-card__placeholder">{{ project.title }}</span>
+      {% endif %}
+    </a>
+    <div class="project-card__body">
+      {% if project.context %}<p class="label">{{ project.context }}</p>{% endif %}
+      <h3 class="project-card__title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+      <p class="project-card__summary">{{ project.summary }}</p>
+      <p class="tags"><span class="visually-hidden">Built with: </span>{{ project.tech | join: " · " }}</p>
+      <p class="project-card__links">
+        <a href="{{ project.url | relative_url }}">Read more<span class="visually-hidden"> about {{ project.title }}</span> →</a>
+        <a href="{{ project.repo }}">GitHub<span class="visually-hidden"> repository for {{ project.title }}</span> ↗</a>
+      </p>
     </div>
-    <p class="project-row__summary">{{ project.summary }}</p>
-    <p class="tags"><span class="visually-hidden">Built with: </span>{{ project.tech | join: " · " }}</p>
-    <p class="project-row__links">
-      <a href="{{ project.url | relative_url }}">Read more<span class="visually-hidden"> about {{ project.title }}</span> →</a>
-      <a href="{{ project.repo }}">GitHub<span class="visually-hidden"> repository for {{ project.title }}</span> ↗</a>
-    </p>
   </li>
   {% endfor %}
 </ul>
