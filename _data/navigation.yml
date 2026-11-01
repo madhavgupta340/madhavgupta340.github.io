@@ -1,0 +1,12 @@
+# Header links, in order. To show the photography page, add:
+#   - title: Photography
+#     url: /photography/
+# (and set `published: true` in photography/index.html).
+- title: Projects
+  url: /projects/
+- title: Writing
+  url: /writing/
+- title: About
+  url: /about/
+- title: Contact
+  url: /contact/

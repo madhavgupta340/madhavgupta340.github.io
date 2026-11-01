@@ -1,0 +1,8 @@
+# Photos for the (currently hidden) photography page.
+# Put image files in assets/photos/ and add one entry per photo, newest first:
+#
+# - src: /assets/photos/isar-sunset.jpg
+#   alt: The Isar river at sunset, with people sitting on the stony bank   # describe what's in the photo
+#   caption: Isar, October 2026                                            # optional
+#   wide: true                                                             # optional: spans the full width
+[]

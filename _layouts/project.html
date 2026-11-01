@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<article class="project">
+  <p class="back"><a href="{{ '/projects/' | relative_url }}">← All projects</a></p>
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.tagline }}</p>
+  </header>
+
+  <dl class="facts">
+    {% if page.context %}<div><dt>Context</dt><dd>{{ page.context }}</dd></div>{% endif %}
+    <div><dt>Built with</dt><dd>{{ page.tech | join: ", " }}</dd></div>
+    <div><dt>Links</dt><dd>
+      <a href="{{ page.repo }}">GitHub repository ↗</a>
+      {% if page.live %}<br><a href="{{ page.live }}">Live site ↗</a>{% if page.live_note %} <span class="muted">({{ page.live_note }})</span>{% endif %}{% endif %}
+    </dd></div>
+  </dl>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% if page.media %}
+  <section class="media" aria-labelledby="media-heading">
+    <h2 id="media-heading">{% if page.media_title %}{{ page.media_title }}{% else %}Screenshots{% endif %}</h2>
+    {% if page.media_note %}<p class="muted small">{{ page.media_note }}</p>{% endif %}
+    {% for item in page.media %}
+    <figure class="media__item">
+      {% if item.type == "video" %}
+        <video controls preload="none" playsinline
+               {% if item.poster %}poster="{{ item.poster | relative_url }}"{% endif %}
+               {% if item.width %}width="{{ item.width }}" height="{{ item.height }}"{% endif %}
+               aria-label="{{ item.alt }}">
+          <source src="{{ item.src | relative_url }}" type="video/mp4">
+          <a href="{{ item.src | relative_url }}">Download the video</a>.
+        </video>
+      {% else %}
+        <a href="{{ item.src | relative_url }}" class="media__link">
+          <img src="{{ item.src | relative_url }}" alt="{{ item.alt }}" loading="lazy" decoding="async"
+               {% if item.width %}width="{{ item.width }}" height="{{ item.height }}"{% endif %}>
+        </a>
+      {% endif %}
+      {% if item.caption %}<figcaption>{{ item.caption | markdownify | remove: "<p>" | remove: "</p>" | strip }}</figcaption>{% endif %}
+    </figure>
+    {% endfor %}
+  </section>
+  {% endif %}
+</article>

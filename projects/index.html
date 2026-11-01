@@ -1,0 +1,14 @@
+---
+layout: default
+title: Projects
+description: Software projects by Madhav Gupta, explained in plain language.
+---
+<header class="page-head">
+  <h1>Projects</h1>
+  <p class="lead">Things I’ve built, explained without the jargon. Each one has a page with more detail and screenshots, plus the code on GitHub.</p>
+</header>
+
+{% assign projects = site.projects | sort: "order" %}
+{% include project-list.html projects=projects %}
+
+<p class="muted small more-link">Everything else lives on <a href="https://github.com/{{ site.author.github }}">GitHub</a>.</p>

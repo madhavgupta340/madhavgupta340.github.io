@@ -1,0 +1,26 @@
+---
+layout: default
+title: Writing
+description: Notes and posts by Madhav Gupta.
+---
+<header class="page-head">
+  <h1>Writing</h1>
+  <p class="lead">Notes on physics, the things I build, and whatever else I can’t stop thinking about.</p>
+</header>
+
+{% if site.posts.size > 0 %}
+<ul class="post-list post-list--full" role="list">
+  {% for post in site.posts %}
+  <li>
+    <time class="label" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {% if post.description %}<p class="muted">{{ post.description }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<div class="empty">
+  <p>Nothing here yet. The first post is on its way.</p>
+  <p class="muted small">In the meantime, the <a href="{{ '/projects/' | relative_url }}">projects</a> are a good place to look around.</p>
+</div>
+{% endif %}

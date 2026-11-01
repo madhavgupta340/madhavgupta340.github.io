@@ -1,0 +1,46 @@
+# Site settings. Edit these to change your name, intro details and links everywhere.
+title: Madhav Gupta
+description: Madhav, 19. Physics student at TUM in Munich, tennis player, builder of small software projects.
+url: "https://madhavgupta340.github.io"
+baseurl: ""
+lang: en
+
+author:
+  name: Madhav Gupta
+  first_name: Madhav
+  age: 19
+  study: Physics
+  semester: 1st semester
+  university: Technical University of Munich
+  university_short: TUM
+  location: Munich
+  email: madhav.gupta@tum.de
+  github: madhavgupta340
+
+# Projects live in _projects/ (one Markdown file each).
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+permalink: /writing/:year/:title/
+
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "" }
+    values: { layout: page }
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

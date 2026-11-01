@@ -1,0 +1,43 @@
+---
+layout: default
+title: Home
+---
+<section class="intro" aria-labelledby="intro-heading">
+  <h1 id="intro-heading">Hey, I’m {{ site.author.first_name }}.</h1>
+  <p class="lead">
+    I’m {{ site.author.age }} and in my first semester of {{ site.author.study | downcase }} at
+    {{ site.author.university_short }} in {{ site.author.location }}. When I’m not wrestling with
+    problem sheets, I build small software projects, play tennis, and answer most texts with a GIF.
+  </p>
+  <dl class="facts facts--inline">
+    <div><dt>Studying</dt><dd>{{ site.author.study }}, {{ site.author.semester }}</dd></div>
+    <div><dt>At</dt><dd>{{ site.author.university }}</dd></div>
+    <div><dt>Based in</dt><dd>{{ site.author.location }}</dd></div>
+  </dl>
+</section>
+
+<section class="section" aria-labelledby="featured-heading">
+  <div class="section__head">
+    <h2 id="featured-heading">Things I’ve built</h2>
+    <a href="{{ '/projects/' | relative_url }}">All projects →</a>
+  </div>
+  {% assign featured = site.projects | where: "featured", true | sort: "order" %}
+  {% include project-list.html projects=featured %}
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="section" aria-labelledby="writing-heading">
+  <div class="section__head">
+    <h2 id="writing-heading">Recent writing</h2>
+    <a href="{{ '/writing/' | relative_url }}">All writing →</a>
+  </div>
+  <ul class="post-list" role="list">
+    {% for post in site.posts limit: 3 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time class="label" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

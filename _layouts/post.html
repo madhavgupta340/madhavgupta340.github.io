@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{% assign words = content | strip_html | number_of_words %}
+{% assign minutes = words | divided_by: 200 | at_least: 1 %}
+<article class="post">
+  <p class="back"><a href="{{ '/writing/' | relative_url }}">← All writing</a></p>
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    <p class="label"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time> · {{ minutes }} min read</p>
+  </header>
+  <div class="prose prose--article">
+    {{ content }}
+  </div>
+  {% if page.previous or page.next %}
+  <nav class="post-nav" aria-label="More posts">
+    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><span class="label">Older</span>{{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+    {% if page.next %}<a class="post-nav__next" href="{{ page.next.url | relative_url }}"><span class="label">Newer</span>{{ page.next.title }}</a>{% endif %}
+  </nav>
+  {% endif %}
+</article>
