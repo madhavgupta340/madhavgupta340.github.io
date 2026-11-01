@@ -1,0 +1,8 @@
+{% comment %} Action buttons for a project. Params: project, details (true = include a "View project" button). {% endcomment %}
+{% assign p = include.project %}
+<p class="btn-row">
+  {% if include.details %}<a class="btn btn--primary" href="{{ p.url | relative_url }}">View project<span class="visually-hidden">: {{ p.title }}</span> →</a>{% endif %}
+  {% if p.live %}<a class="btn" href="{{ p.live }}">Live demo<span class="visually-hidden"> of {{ p.title }}</span> ↗{% if p.live_short_note %} <span class="btn__note">{{ p.live_short_note }}</span>{% endif %}</a>{% endif %}
+  {% if p.demo_video %}<a class="btn" href="{{ p.url | relative_url }}#demo">Watch demo<span class="visually-hidden"> of {{ p.title }}</span> ▶</a>{% endif %}
+  <a class="btn" href="{{ p.repo }}">GitHub<span class="visually-hidden"> repository for {{ p.title }}</span> ↗</a>
+</p>

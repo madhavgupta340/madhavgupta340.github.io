@@ -1,9 +1,13 @@
-<div class="buddy" data-buddy hidden>
-  <button type="button" class="buddy__figure" data-buddy-next
-          aria-label="Pixel Madhav. Click for something new" title="Click me">
-    <canvas width="32" height="28" aria-hidden="true"></canvas>
-  </button>
-  <button type="button" class="buddy__toggle" data-buddy-toggle>
-    <span data-buddy-toggle-label>Pause</span><span class="visually-hidden"> pixel animation</span>
-  </button>
+<div class="buddy" data-buddy aria-label="Pixel Madhav" role="region">
+  <div class="buddy__sprite" data-buddy-sprite>
+    <div class="buddy__sfx" data-buddy-sfx aria-hidden="true"></div>
+    <button type="button" class="buddy__figure" data-buddy-poke aria-label="Pixel Madhav. Click to say hi">
+      <canvas width="48" height="56" aria-hidden="true"></canvas>
+    </button>
+  </div>
+  <div class="buddy__controls">
+    <button type="button" data-buddy-pause>Pause<span class="visually-hidden"> pixel Madhav</span></button>
+    <button type="button" data-buddy-hide>Hide<span class="visually-hidden"> pixel Madhav</span></button>
+  </div>
 </div>
+<noscript><style>.buddy { display: none; }</style></noscript>

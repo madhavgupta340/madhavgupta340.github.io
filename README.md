@@ -4,7 +4,7 @@ My personal site: projects, writing, and a small pixel-art version of me in the 
 
 Live at **https://madhavgupta340.github.io**
 
-It's a plain [Jekyll](https://jekyllrb.com) site. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
+It's a plain [Jekyll](https://jekyllrb.com) site with a dark theme set in Geist. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
 
 ## Updating content
 
@@ -32,20 +32,37 @@ It's a plain [Jekyll](https://jekyllrb.com) site. GitHub Pages builds it automat
    context: Personal project, 2026
    tech: [Python, JavaScript]
    repo: https://github.com/madhavgupta340/my-project
-   live: https://example.com   # optional
-   media:                      # optional screenshots / videos
-     - src: /assets/projects/my-project/screenshot.jpg
+   live: https://example.com          # optional, adds a "Live demo" button
+   live_short_note: sign-in only      # optional, small note on that button
+   demo_video: true                   # optional, adds a "Watch demo" button (needs a video in media)
+
+   # The big preview shown on cards and at the top of the project page.
+   # Leave these out and a neutral "Preview coming soon" card is shown instead.
+   cover: /assets/projects/my-project/screenshot.jpg
+   cover_width: 1600
+   cover_height: 1000
+   cover_label: Dashboard              # shown in the little window bar
+   cover_alt: What the screenshot shows, for people using screen readers
+   cover_caption: Optional caption under the preview on the project page.
+
+   media:                      # optional extra screenshots / videos for the gallery
+     - label: Settings         # shown in the window bar
+       src: /assets/projects/my-project/settings.jpg
        width: 1600
        height: 1000
-       alt: What the screenshot shows, for people using screen readers
+       alt: What the screenshot shows
        caption: Optional caption.
+       wide: true              # optional: span the full gallery width
      - type: video
+       label: Demo
        src: /assets/projects/my-project/demo.mp4
        poster: /assets/projects/my-project/screenshot.jpg
        alt: Short description of the video
    ```
 3. Write the plain-language explanation below the `---` in normal Markdown.
-4. Put images in `assets/projects/my-project/`. Around 1600px wide JPGs keep pages fast.
+4. Put images in `assets/projects/my-project/`. Around 1600px-wide JPGs at a 16:10-ish ratio look best; cards show the top of the image in a 16:10 frame, and the gallery shows images uncropped.
+
+Clicking any screenshot on a project page opens it larger. Use ← / → to move between them and Esc to close.
 
 The project gets its own page at `/projects/my-project/` automatically.
 
@@ -94,14 +111,26 @@ Open http://localhost:4000. Pages rebuild when you save (restart the server afte
 
 ## The pixel companion
 
-It lives in `assets/js/buddy.js` and is drawn in code on a 32×28 canvas, so there are no image files.
+Pixel me lives in `assets/js/buddy.js`. It's drawn in code on a 48×56 canvas, so there are no image files to manage.
 
-- Click it to see a new activity: tennis, piano, lifting, yawning and napping, GIF texting, Newton's apple, juggling, and waving.
-- **Pause/Play** sits under it. The choice is remembered, and it starts paused for anyone whose system asks for reduced motion.
-- It stops animating when the tab is hidden or it's scrolled out of view.
-- On wide screens it sits in the empty right margin. On smaller screens it moves into the footer so it never covers anything.
+**Where it lives**
+- On wide screens (1240px and up), it roams the empty right margin of the window: it walks along the bottom edge, bounces off the side ("BOING!"), climbs the wall and slides down ("WHEEE!"), and flies a rocket pack. That layer is click-through, so it never covers text or blocks clicks.
+- On smaller screens, it gets its own strip below the footer and runs edge to edge there. The strip's height is reserved up front, so nothing jumps around.
 
-Preview a single activity from the browser console with `buddy.play("gif")` or `buddy.show("tennis", 4)`. To add one, write a new entry in `ACTS` and add its name to `PLAYLIST`.
+**What it does**
+- Tennis ("POW!"), piano, lifting, yawning and napping ("Zzz…"), replying with a GIF, getting bonked by Newton's apple ("BONK!", then "AHA!"), and juggling.
+- It reacts to the page. Its eyes follow your cursor, it says hey when the cursor comes close, it notices fast scrolling ("WHOA!") and the end of the page, and it says hi when you come back to the tab.
+- Click it to say hi. Click a few more times and see what happens.
+- Comic bubbles show up now and then for about 1.5 seconds. They never flash.
+
+**Controls**
+- **Pause / Play** freezes it in place. **Hide** removes it, and "Bring back pixel me" in the footer brings it back. Both choices are remembered.
+- It starts paused for anyone whose system asks for reduced motion, and stops completely when the tab is hidden.
+
+**Changing it**
+- Colours (skin, shirt, shoes…) are in the `P` object at the top of the file.
+- Poses and props are in `ANIMS`. Things it does and where it goes are in `BEHAVIOURS`, each with a `weight` for how often it happens.
+- Preview from the browser console: `buddy.do("rocket")` runs a behaviour; `buddy.pose("apple", 20)` freezes on a single frame. `buddy.behaviours` and `buddy.poses` list the names.
 
 ## Credits
 
