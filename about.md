@@ -19,7 +19,7 @@ I’m a bit of a nerd. Physics is the main thing at the moment, but I also like 
 
 ## The little one in the corner
 
-That’s pixel me. It plays tennis, lifts, practises piano, sends GIFs, and occasionally gets hit on the head by a falling apple (Newton would get it). Click it to see what it does next, or pause it whenever you like.
+That’s pixel me. It plays tennis, lifts, practises piano, listens to music, yawns a lot, and now and then takes off with a tiny rocket. Click it to say hi, or pause it whenever you like.
 
 ## Say hi
 

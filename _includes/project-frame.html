@@ -4,10 +4,10 @@
   Uses the project's `cover` image, or a text placeholder when there isn't one.
 {% endcomment %}
 {% assign p = include.project %}
-<div class="frame">
+<div class="frame{% if p.accent %} frame--{{ p.accent }}{% endif %}">
   <div class="frame__bar" aria-hidden="true">
-    <span class="frame__dots"><i></i><i></i><i></i></span>
-    <span class="frame__title">{{ p.title }}{% if p.cover_label %} · {{ p.cover_label }}{% endif %}</span>
+    <span class="frame__title">{{ p.title | downcase }}{% if p.cover_label %} — {{ p.cover_label | downcase }}{% endif %}</span>
+    <span class="frame__dots"><i></i><i></i></span>
   </div>
   {% if p.cover %}
     {% capture img %}<img src="{{ p.cover | relative_url }}" alt="{{ p.cover_alt }}"{% if p.cover_width %} width="{{ p.cover_width }}" height="{{ p.cover_height }}"{% endif %} loading="lazy" decoding="async">{% endcapture %}

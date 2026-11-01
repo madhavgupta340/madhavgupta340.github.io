@@ -4,7 +4,7 @@ My personal site: projects, writing, and a small pixel-art version of me in the 
 
 Live at **https://madhavgupta340.github.io**
 
-It's a plain [Jekyll](https://jekyllrb.com) site with a dark theme set in Geist. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
+It's a plain [Jekyll](https://jekyllrb.com) site with a light, retro-computing look: JetBrains Mono for headings and labels, Inter for longer text. GitHub Pages builds it automatically on every push to `main`, so there is no build step to run yourself. Everything you'd normally want to change is a Markdown or YAML file.
 
 ## Updating content
 
@@ -27,6 +27,7 @@ It's a plain [Jekyll](https://jekyllrb.com) site with a dark theme set in Geist.
    title: My Project
    order: 3                # position in lists (lower = earlier)
    featured: true          # also show it on the home page
+   accent: blue            # window colour of its previews: orange, yellow, blue, green or pink
    tagline: One sentence shown under the title on its own page.
    summary: Two sentences for the project list.
    context: Personal project, 2026
@@ -111,26 +112,26 @@ Open http://localhost:4000. Pages rebuild when you save (restart the server afte
 
 ## The pixel companion
 
-Pixel me lives in `assets/js/buddy.js`. It's drawn in code on a 48×56 canvas, so there are no image files to manage.
+Pixel me lives in `assets/js/buddy.js`. It's drawn in code on a 36×38 canvas and only ever scaled by whole numbers (2×, 3× or 4×), so the pixels stay crisp. It has no mouth; the eyes, eyebrows and blush do the talking.
 
-**Where it lives**
-- On wide screens (1240px and up), it roams the empty right margin of the window: it walks along the bottom edge, bounces off the side ("BOING!"), climbs the wall and slides down ("WHEEE!"), and flies a rocket pack. That layer is click-through, so it never covers text or blocks clicks.
-- On smaller screens, it gets its own strip below the footer and runs edge to edge there. The strip's height is reserved up front, so nothing jumps around.
+**Where it lives** (worked out again every time the window is resized)
+- **Wide windows:** it roams the empty right margin. It walks along the bottom edge, bounces off the side ("BOING!"), climbs the wall and slides down ("WHEEE!"), and takes off holding a tiny rocket ("WHOOSH!"). The layer lets clicks pass through and never overlaps the text column.
+- **Narrower windows and phones:** it sits in a slim dock fixed to the bottom of the window. The page gets the same amount of bottom padding, so nothing is ever hidden behind it. Speech bubbles are switched off in the dock, so it never draws over the page.
 
 **What it does**
-- Tennis ("POW!"), piano, lifting, yawning and napping ("Zzz…"), replying with a GIF, getting bonked by Newton's apple ("BONK!", then "AHA!"), and juggling.
-- It reacts to the page. Its eyes follow your cursor, it says hey when the cursor comes close, it notices fast scrolling ("WHOA!") and the end of the page, and it says hi when you come back to the tab.
+- Tennis ("POW!"), keepy-uppy with the racket, piano, lifting with dumbbells, yawning into a quick nap, and listening to music on headphones.
+- It reacts to the page. Its eyes follow your cursor, it waves when the cursor comes close, it notices fast scrolling and the end of the page, and it says hi when you come back to the tab.
 - Click it to say hi. Click a few more times and see what happens.
-- Comic bubbles show up now and then for about 1.5 seconds. They never flash.
+- Comic bubbles appear now and then for about 1.5 seconds. Nothing flashes.
 
 **Controls**
-- **Pause / Play** freezes it in place. **Hide** removes it, and "Bring back pixel me" in the footer brings it back. Both choices are remembered.
-- It starts paused for anyone whose system asks for reduced motion, and stops completely when the tab is hidden.
+- **Pause / Play** freezes it in place. **Hide** removes it, along with the dock, and "Bring back pixel me" in the footer brings it back. Both choices are remembered.
+- It starts paused for anyone whose system asks for reduced motion, and stops completely when the tab isn't visible.
 
 **Changing it**
-- Colours (skin, shirt, shoes…) are in the `P` object at the top of the file.
+- Colours (skin, shirt, trousers, shoes…) are in the `P` object at the top of the file.
 - Poses and props are in `ANIMS`. Things it does and where it goes are in `BEHAVIOURS`, each with a `weight` for how often it happens.
-- Preview from the browser console: `buddy.do("rocket")` runs a behaviour; `buddy.pose("apple", 20)` freezes on a single frame. `buddy.behaviours` and `buddy.poses` list the names.
+- Preview from the browser console: `buddy.do("rocket")` runs a behaviour; `buddy.pose("music", 3)` freezes on a single frame. `buddy.behaviours` and `buddy.poses` list the names.
 
 ## Credits
 

@@ -33,10 +33,10 @@ layout: default
     <div class="gallery-grid">
       {% for item in page.media %}
       <figure class="gallery-item{% if item.type == 'video' or item.wide %} gallery-item--wide{% endif %}"{% if item.type == "video" %} id="demo"{% endif %}>
-        <div class="frame">
+        <div class="frame{% if page.accent %} frame--{{ page.accent }}{% endif %}">
           <div class="frame__bar" aria-hidden="true">
-            <span class="frame__dots"><i></i><i></i><i></i></span>
-            <span class="frame__title">{{ page.title }}{% if item.label %} · {{ item.label }}{% endif %}</span>
+            <span class="frame__title">{{ page.title | downcase }}{% if item.label %} — {{ item.label | downcase }}{% endif %}</span>
+            <span class="frame__dots"><i></i><i></i></span>
           </div>
           {% if item.type == "video" %}
             <div class="frame__view frame__view--natural">
