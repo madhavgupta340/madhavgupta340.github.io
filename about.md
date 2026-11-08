@@ -7,7 +7,7 @@ lead: Physics student, tennis player, and a bit of a nerd.
 
 I’m Madhav. I’m 19 and in my first semester of physics at the Technical University of Munich, which right now mostly means lectures, problem sheets, and slowly realising how much there is to learn.
 
-I’m a bit of a nerd. Physics is the main thing at the moment, but I also like building software. So far that’s [PaperTrade]({{ '/projects/papertrade/' | relative_url }}), an app for practising investing with pretend money, and [ChainBridge]({{ '/projects/chainbridge/' | relative_url }}), a blockchain project from the TUM Blockchain & AI Hackathon.
+I’m a bit of a nerd. Physics is the main thing at the moment, but I also like building software. So far that’s [PaperTrade]({{ '/projects/papertrade/' | relative_url }}), an app for practising investing with pretend money, [ChainBridge]({{ '/projects/chainbridge/' | relative_url }}), a blockchain project from the TUM Blockchain & AI Hackathon, and the [Dash0 Migrator]({{ '/projects/dash0-migrator/' | relative_url }}), which came 3rd at THINC! Hack Munich.
 
 ## Outside of that
 
