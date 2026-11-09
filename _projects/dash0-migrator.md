@@ -9,6 +9,8 @@ summary: Moving from one monitoring service to another usually means rebuilding 
 context: THINC! Hack Munich, Nov 2026 · 3rd place
 tech: [Python, PromQL, Perses, OpenTelemetry, JavaScript]
 repo: https://github.com/madhavgupta340/thinchackdash
+live: https://thinchackdash.vercel.app/
+live_note: demo preview
 media_title: Demo and screenshots
 media_note: Recorded from the local app converting a fictional online-shop example.
 media:
