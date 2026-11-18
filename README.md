@@ -10,7 +10,7 @@ It's a plain [Jekyll](https://jekyllrb.com) site with a calm, black-and-white la
 
 | What | Where |
 |---|---|
-| Name, intro details, email, GitHub | `_config.yml` (the `author:` block) |
+| Name, intro details, email, GitHub, LinkedIn | `_config.yml` (the `author:` block) |
 | Home page: intro, "Off the clock" and "Say hi" sections | `index.html` |
 | About page | `about.md` |
 | Contact page | `contact.md` |

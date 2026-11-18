@@ -14,4 +14,8 @@ lead: Questions, ideas, or just want to say hi? Email is best. GIFs are welcome.
     <dt>GitHub</dt>
     <dd><a href="https://github.com/{{ site.author.github }}">github.com/{{ site.author.github }}</a></dd>
   </div>
+  <div>
+    <dt>LinkedIn</dt>
+    <dd><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}/">linkedin.com/in/{{ site.author.linkedin }}</a></dd>
+  </div>
 </dl>
