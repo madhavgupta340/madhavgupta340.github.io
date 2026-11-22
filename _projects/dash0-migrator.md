@@ -1,6 +1,6 @@
 ---
 title: Dash0 Migrator
-order: 0
+order: 1
 featured: true
 cover: /assets/projects/dash0-migrator/02-upload.jpg       # thumbnail on project cards
 cover_alt: The Migrate app's start screen, titled Datadog to Dash0, with sample files ready to convert

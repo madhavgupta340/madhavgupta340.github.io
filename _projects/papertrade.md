@@ -1,6 +1,6 @@
 ---
 title: PaperTrade
-order: 2
+order: 3
 featured: true
 cover: /assets/projects/papertrade/dashboard.jpg       # thumbnail on project cards
 cover_alt: PaperTrade dashboard in demo mode with a simulated portfolio value and allocation breakdown

@@ -1,6 +1,6 @@
 ---
 title: ChainBridge
-order: 1
+order: 2
 featured: true
 cover: /assets/projects/chainbridge/01-home.jpg       # thumbnail on project cards
 cover_alt: ChainBridge home screen with two choices, Seal a document and Check a document
