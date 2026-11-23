@@ -1,7 +1,7 @@
 ---
 title: PaperTrade
 order: 3
-featured: true
+featured: false
 cover: /assets/projects/papertrade/dashboard.jpg       # thumbnail on project cards
 cover_alt: PaperTrade dashboard in demo mode with a simulated portfolio value and allocation breakdown
 tagline: Practise trading stocks with pretend money, so mistakes cost nothing.

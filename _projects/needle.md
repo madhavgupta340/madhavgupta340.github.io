@@ -4,9 +4,9 @@ order: 0
 featured: true
 cover: /assets/projects/needle/01-dashboard.jpg       # thumbnail on project cards
 cover_alt: Needle's dashboard for a sample tender, with the cost estimate, confidence score and summary
-tagline: An AI assistant for construction companies that prices a new tender from their own past projects, flags unclear items and checks the quantities against the building plan. Built at the Bauindustrie hackathon 2026.
-summary: Pricing a construction tender means comparing a long bill of quantities, the plans and old projects by hand. Needle reads the tender, gives every item a price from the company’s own past projects with its source, and flags what looks wrong. Built at the Bauindustrie hackathon.
-context: Bauindustrie hackathon, Nov 2026
+tagline: An AI assistant for construction companies that prices a new tender from their own past projects, flags unclear items and checks the quantities against the building plan. Built at the TUM.ai × Bauindustrie hackathon in Munich, 2026.
+summary: Pricing a construction tender means comparing a long bill of quantities, the plans and old projects by hand. Needle reads the tender, gives every item a price from the company’s own past projects with its source, and flags what looks wrong. Built at the TUM.ai × Bauindustrie hackathon in Munich.
+context: TUM.ai × Bauindustrie hackathon, Munich, Nov 2026
 tech: [Python, FastAPI, Claude, Voyage AI, OpenAI vision, JavaScript]
 repo: https://github.com/madhavgupta340/bauindustrie_hack
 live: https://bauindustriehack-lv-mastermind-v2.vercel.app/
@@ -61,5 +61,5 @@ The rule we built around: **the AI never invents a price.** It only judges wheth
 
 ## Good to know
 
-- We built it in a team of four (Jan Fahlbusch, Davin Dewanto, Chia Brehm and me) as Team Monolith, for Challenge A of the Bauindustrie hackathon in November 2026.
+- We built it in a team of four (Jan Fahlbusch, Davin Dewanto, Chia Brehm and me) as Team Monolith, for Challenge A of the TUM.ai × Bauindustrie hackathon in Munich in November 2026.
 - The live link is a demo of the dashboard with sample data. The AI backend is switched off, so uploads are locked there, but you can click through a fully priced sample project.

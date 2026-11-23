@@ -1,7 +1,7 @@
 ---
 title: ChainBridge
 order: 2
-featured: true
+featured: false
 cover: /assets/projects/chainbridge/01-home.jpg       # thumbnail on project cards
 cover_alt: ChainBridge home screen with two choices, Seal a document and Check a document
 tagline: A digital notary for files. It stamps a fingerprint of your document on the Cardano blockchain so anyone can check a copy later.
